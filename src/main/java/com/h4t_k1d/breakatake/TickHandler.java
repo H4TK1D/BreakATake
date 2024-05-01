@@ -18,14 +18,17 @@ public class TickHandler {
         timer.tick();
         if (timer.getTicks() % 20 != 0) return;
         String timeString = String.format(
-                "Hours: %s\nMinutes: %s\nSeconds: %s\nTicks: %s",
+                "\nHours: %s\nMinutes: %s\nSeconds: %s\nTicks: %s",
                 timer.getHours(),
                 timer.getMinutes(),
                 timer.getSeconds(),
                 timer.getLocalTicks()
         );
         LOGGER.info(timeString);
-        if (timer.getMinutes() % 30 == 0) return;
+        LOGGER.info(timer.getMinutes()+ " " + timer.getSeconds());
+        if (timer.getMinutes() != 30 && timer.getMinutes() != 0) return;
+        if (timer.getHours() == 0 && timer.getMinutes() != 30) return;
+        if (timer.getSeconds() != 0) return;
         LOGGER.info("HÆNG DIG SELV DIT FEDE SVIN");
     }
 }

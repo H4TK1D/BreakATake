@@ -31,7 +31,6 @@ public class Timer {
     public int getTicks(){
         return  currentTick;
     }
-
     public int getLocalTicks(){
         return  currentTick%20;
     }
