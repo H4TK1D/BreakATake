@@ -1,9 +1,9 @@
-package com.h4t_k1d.breakatake;
+package com.h4t_k1d.breakatake.client;
 
 public class Timer {
     private int currentTick = 0;
-    private int seconds = 0;
-    private int minutes = 0;
+    private int seconds = 40;
+    private int minutes = 29;
     private int hours = 0;
 
     public void tick(){
