@@ -36,11 +36,9 @@ public class TickHandler {
         Pair<Integer,Connection> connectionPair = ConnectionHandler.localConnection();
         if (connectionPair.getA() == 1) return;
         String kickString = String.format(
-                "Take a break :)\n You have been playing for:\nHours: %s\nMinutes: %s\nSeconds: %s\nTicks: %s",
+                "Take a break :)\n You have been playing for:\n%s Hours\n%s Minutes",
                 timer.getHours(),
-                timer.getMinutes(),
-                timer.getSeconds(),
-                timer.getLocalTicks()
+                timer.getMinutes()
         );
         Integer result = playerKick.kickPlayer(connectionPair.getB(),kickString);
         if (result == 1) Minecraft.crash(
