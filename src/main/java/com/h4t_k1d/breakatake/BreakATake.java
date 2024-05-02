@@ -29,36 +29,10 @@ public class BreakATake
 
     public BreakATake(IEventBus modEventBus, ModContainer modContainer)
     {
-        // Register the commonSetup method for mod loading
-        modEventBus.addListener(this::commonSetup);
-        // Register SetupEvents (Mandatory)
-        NeoForge.EVENT_BUS.register(this);
         //Add a listener to the tickHandler
         NeoForge.EVENT_BUS.addListener(tickHandler::tick);
         NeoForge.EVENT_BUS.addListener(GUI::tick);
         // Register Config
         modContainer.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
-    }
-
-    private void commonSetup(final FMLCommonSetupEvent event)
-    {
-        // Some common setup code
-    }
-
-    // You can use SubscribeEvent and let the Event Bus discover methods to call
-    @SubscribeEvent
-    public void onServerStarting(ServerStartingEvent event)
-    {
-        // Do something when the server starts
-    }
-
-    // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            // Some client setup code
-        }
-
     }
 }
