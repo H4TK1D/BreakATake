@@ -1,5 +1,6 @@
 package com.h4t_k1d.breakatake.client;
 
+import com.h4t_k1d.breakatake.Config;
 import com.h4t_k1d.breakatake.etc.Debugger;
 import com.h4t_k1d.breakatake.events.playerKick;
 import com.mojang.logging.LogUtils;
@@ -23,6 +24,7 @@ public class TickHandler {
         return Minecraft.getInstance().screen == null || !Minecraft.getInstance().screen.isPauseScreen();
     }
     private static Boolean shouldKick(){
+        if (Config.FocusMode) return false;
         if (timer.getMinutes() != 30 && timer.getMinutes() != 0) return false;
         if (timer.getHours() == 0 && timer.getMinutes() != 30) return false;
         return timer.getSeconds() == 0;
