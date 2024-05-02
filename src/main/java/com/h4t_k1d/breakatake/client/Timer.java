@@ -2,9 +2,9 @@ package com.h4t_k1d.breakatake.client;
 
 public class Timer {
     private int currentTick = 0;
-    private int seconds = 40;
-    private int minutes = 59;
-    private int hours = 60;
+    private int seconds = 0;
+    private int minutes = 0;
+    private int hours = 0;
 
     public void tick(){
         currentTick++;
@@ -37,10 +37,19 @@ public class Timer {
     public int getSeconds(){
         return seconds;
     }
+    public int getTotalSeconds(){
+        return (int) Math.floor(currentTick/20f);
+    }
     public int getMinutes(){
         return minutes;
     }
+    public int getTotalMinutes(){
+        return (int) Math.floor(currentTick/20f/60);
+    }
     public int getHours(){
         return hours;
+    }
+    public int getTotalHours(){
+        return (int) Math.floor(currentTick/20f/60/60);
     }
 }

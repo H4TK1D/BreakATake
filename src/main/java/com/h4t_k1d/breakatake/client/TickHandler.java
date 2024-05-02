@@ -25,15 +25,15 @@ public class TickHandler {
     }
     private static Boolean shouldKick(){
         if (Config.FocusMode) return false;
-        if (timer.getMinutes() != 30 && timer.getMinutes() != 0) return false;
-        if (timer.getHours() == 0 && timer.getMinutes() != 30) return false;
+        if (timer.getTotalMinutes() % Config.KickTime != 0) return false;
+        if (timer.getHours() == 0 && timer.getMinutes() != Config.KickTime) return false;
         return timer.getSeconds() == 0;
     }
     public void tick(ClientTickEvent.Post event) {
         if (!shouldHandleTick()) return;
         timer.tick();
         if (timer.getTicks() % 20 != 0) return;
-        Debugger.DebugTime(timer);
+        //Debugger.DebugTime(timer);
         if (!shouldKick()) return;
         Pair<Integer,Connection> connectionPair = ConnectionHandler.localConnection();
         if (connectionPair.getA() == 1) return;

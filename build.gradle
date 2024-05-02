@@ -100,7 +100,7 @@ dependencies {
     // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
 
     //Enable Configured
-    //runtimeOnly("curse.maven:configured-457570:5300382")
+    runtimeOnly("curse.maven:configured-457570:5300382")
 
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
