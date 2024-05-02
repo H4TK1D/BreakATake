@@ -1,5 +1,6 @@
 package com.h4t_k1d.breakatake;
 
+import com.h4t_k1d.breakatake.client.GUI;
 import com.h4t_k1d.breakatake.client.TickHandler;
 import com.mojang.logging.LogUtils;
 import net.neoforged.api.distmarker.Dist;
@@ -34,6 +35,7 @@ public class BreakATake
         NeoForge.EVENT_BUS.register(this);
         //Add a listener to the tickHandler
         NeoForge.EVENT_BUS.addListener(tickHandler::tick);
+        NeoForge.EVENT_BUS.addListener(GUI::tick);
         // Register Config
         modContainer.registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
     }

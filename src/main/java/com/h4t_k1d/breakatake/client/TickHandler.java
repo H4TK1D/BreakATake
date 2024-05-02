@@ -16,7 +16,7 @@ import oshi.util.tuples.Pair;
 
 
 public class TickHandler {
-    private static final Timer timer = new Timer();
+    public static final Timer timer = new Timer();
     private static final Logger LOGGER = LogUtils.getLogger();
     private static Boolean shouldHandleTick(){
         if (FMLEnvironment.dist != Dist.CLIENT) return false;
