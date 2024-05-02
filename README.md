@@ -9,3 +9,7 @@ A minecraft mod that kicks you for playing the game too long (This was written i
 - Customizeable kick time
 - Focus mode which lets you play without being kicked
 
+## Versions
+
+- 1.20.5
+- Maybe more if I feel inspired enough
