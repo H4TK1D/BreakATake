@@ -37,9 +37,6 @@ public class Timer {
     public int getSeconds(){
         return seconds;
     }
-    public int getTotalSeconds(){
-        return (int) Math.floor(currentTick/20f);
-    }
     public int getMinutes(){
         return minutes;
     }
@@ -48,8 +45,5 @@ public class Timer {
     }
     public int getHours(){
         return hours;
-    }
-    public int getTotalHours(){
-        return (int) Math.floor(currentTick/20f/60/60);
     }
 }
