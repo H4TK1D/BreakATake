@@ -29,6 +29,7 @@ public class GUI {
                 timer.getMinutes(),
                 timer.getSeconds()
         );
+
         drawText(clockFont,event.getGuiGraphics(),clockText,xCoord,yCoord,color);
     }
     private static void drawText(Font font, GuiGraphics guiGraphics, String content, int x, int y, int rgb) {
